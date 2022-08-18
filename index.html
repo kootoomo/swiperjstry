@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Slider with SwiperJS</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        h1 {
+            text-align: center;
+            color: rgb(181, 169, 157);
+            font-family:'Courier New', Courier, monospace;
+        }
+        .swiper {
+            width: 600px;
+            height: 400px;   
+            /* max-width: 100%; */
+        }
+        .swiper-button-prev, .swiper-button-next{
+            color: rgb(181, 169, 157);
+        }
+        .swiper-pagination-bullet-active {
+            background: rgb(181, 169, 157);
+        }
+        @media (max-width: 500px) {
+            .swiper {
+                width: 400px;
+                height: 250px;
+            }
+            .swiper-slide img{
+                width: 400px;
+            }
+        }  
+        @media (max-width: 360px) {
+            .swiper {
+                width: 340px;
+                height: 220px;
+            }
+            .swiper-slide img{
+                width: 340px;
+            }
+        }     
+    </style>
+
+</head>
+<body>
+    <h1>What a wonderful world!</h1>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" style="background-color: rosybrown;"><img src="img/david-600-300.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide" style="background-color: yellowgreen;"><img src="img/lukasz-600-300.jpg" alt="Slide 2"></div>
+        <div class="swiper-slide" style="background-color: orange;"><img src="img/qingbao-600-300.jpg" alt="Slide 3"></div>
+        <div class="swiper-slide" style="background-color: teal;"><img src="img/tim-600-300.jpg" alt="Slide 4"></div>
+        <div class="swiper-slide" style="background-color: sienna;"><img src="img/v2osk-600-300.jpg" alt="Slide 5"></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            speed: 1800,
+            effect: 'cube',
+            //effect:  'slide', 'fade', 'cube', 'coverflow', 'flip' or 'creative'
+            // spaceBetween: 100,
+
+            autoplay: {
+                delay: 1000,
+            },
+           
+            // effect: 'slide',
+            // slidesPerView: 3,
+            // breakpoints: {
+            //     // when window width is >= 320px
+            //     320: {
+            //     slidesPerView: 1,
+            //     spaceBetween: 20
+            //     },
+            //     768: {
+            //     slidesPerView: 2,
+            //     spaceBetween: 40
+            //     },
+            //     1024: {
+            //     slidesPerView: 3,
+            //     spaceBetween: 70
+            //     },
+            // },
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+        });
+    </script>
+</body>
+</html>
